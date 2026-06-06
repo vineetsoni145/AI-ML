@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+  <head>
+    <title>BGMI Survival Game</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background-image: url("{{ url_for('static', filename='gaming.jpg') }}");
+        background-size: cover;
+        background-position: center;
+
+        color: white;
+      }
+
+      .overlay {
+        min-height: 100vh;
+        background: rgba(0, 0, 0, 0.75);
+        padding: 30px;
+      }
+
+      h1 {
+        text-align: center;
+        color: gold;
+        margin-bottom: 30px;
+      }
+
+      .stats {
+        width: 60%;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+      }
+
+      .stats h2 {
+        margin: 12px 0;
+      }
+
+      .buttons {
+        text-align: center;
+      }
+
+      button {
+        width: 220px;
+        padding: 15px;
+        margin: 10px;
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .kill {
+        background: #e53935;
+        color: white;
+      }
+
+      .loot {
+        background: #43a047;
+        color: white;
+      }
+
+      .hide {
+        background: #fb8c00;
+        color: white;
+      }
+
+      .newgame {
+        background: #1565c0;
+        color: white;
+      }
+
+      button:hover {
+        opacity: 0.9;
+      }
+
+      .message {
+        text-align: center;
+        font-size: 32px;
+        margin-top: 30px;
+        color: yellow;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="overlay">
+      <h1>🎮 BGMI SURVIVAL GAME 🎮</h1>
+
+      <div class="stats">
+        <h2>❤️ Health : {{ health }}</h2>
+        <h2>⚠️ Zone : {{ zone }}</h2>
+        <h2>🎯 Kills : {{ kills }}</h2>
+        <h2>🔫 Ammo : {{ ammo }}</h2>
+        <h2>💊 Heals : {{ heals }}</h2>
+      </div>
+
+      {% if message == "" %}
+
+      <div class="buttons">
+        <form method="POST">
+          <button class="kill" name="choice" value="kill">🔫 Kill</button>
+          <button class="loot" name="choice" value="loot">🎒 Loot</button>
+          <button class="hide" name="choice" value="hide">🌿 Hide</button>
+        </form>
+      </div>
+
+      {% endif %}
+
+      <div class="message">{{ message }}</div>
+
+      <div class="buttons">
+        <form method="POST">
+          <button class="newgame" name="choice" value="new">
+            🔄 Start New Game
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

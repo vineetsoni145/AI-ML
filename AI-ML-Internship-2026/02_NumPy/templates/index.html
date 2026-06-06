@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSV File Reader</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin-top: 80px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      .box {
+        background-color: white;
+        width: 320px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        height: 300px;
+      }
+
+      input {
+        margin: 10px;
+      }
+
+      button {
+        padding: 8px 15px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: darkblue;
+      }
+
+      p {
+        color: red;
+      }
+
+      h3 {
+        color: green;
+        margin: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSV File Upload</h1>
+
+    <div class="box">
+      {% if error %}
+      <p>{{ error }}</p>
+      {% endif %}
+
+      <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="csv_file" /><br />
+        <button type="submit">Upload</button>
+      </form>
+
+      {% if filename %}
+      <h3>File Name: {{ filename }}</h3>
+      <h3>Total Rows: {{ rows }}</h3>
+      <h3>Total Columns: {{ cols }}</h3>
+      {% endif %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Inventory Management System</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        background: #f4f4f4;
+        padding: 20px;
+      }
+
+      .container {
+        width: 80%;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .message {
+        color: green;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Inventory Management System</h1>
+
+      <form method="POST">
+        <label>Choose Operation</label>
+
+        <select name="choice">
+          <option value="check">Check Stock</option>
+          <option value="add">Add Product</option>
+          <option value="purchase">Purchase</option>
+          <option value="return">Return Product</option>
+          <option value="update">Update Stock</option>
+        </select>
+
+        <input type="text" name="product" placeholder="Enter Product Name" />
+
+        <input type="number" name="quantity" placeholder="Enter Quantity" />
+
+        <input
+          type="text"
+          name="username"
+          placeholder="Admin Username (Only For Add Product)"
+        />
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Admin Password (Only For Add Product)"
+        />
+
+        <button type="submit">Submit</button>
+      </form>
+
+      {% if message %}
+
+      <div class="message">{{ message }}</div>
+
+      {% endif %}
+
+      <h2>Current Stock</h2>
+
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+        </tr>
+
+        {% for product, quantity in data.items() %}
+
+        <tr>
+          <td>{{ product }}</td>
+          <td>{{ quantity }}</td>
+        </tr>
+
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>

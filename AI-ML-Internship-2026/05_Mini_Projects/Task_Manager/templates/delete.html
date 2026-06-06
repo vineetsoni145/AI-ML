@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Delete Task</title>
+
+    <style>
+      body {
+        background-color: #e5e7eb;
+        font-family: Arial, sans-serif;
+        padding: 40px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 42px;
+        color: #1f2937;
+        margin-bottom: 35px;
+      }
+
+      form {
+        background-color: white;
+        width: 500px;
+        margin: auto;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      label {
+        font-size: 18px;
+        font-weight: bold;
+        color: #374151;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        margin-bottom: 25px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-size: 16px;
+      }
+
+      button {
+        padding: 12px 22px;
+        border: none;
+        border-radius: 7px;
+        background-color: #1677ee;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+
+      button:hover {
+        background-color: #0f5ec4;
+      }
+
+      center {
+        margin-top: 25px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Delete Task</h1>
+
+    <form action="/delete" method="POST">
+      <label>Enter Task Name :</label>
+
+      <input type="text" name="taskname" />
+
+      <button type="submit">Delete</button>
+    </form>
+
+    <center>
+      <a href="/add">
+        <button>Add</button>
+      </a>
+
+      <a href="/view">
+        <button>View</button>
+      </a>
+
+      <a href="/">
+        <button>Home</button>
+      </a>
+    </center>
+  </body>
+</html>

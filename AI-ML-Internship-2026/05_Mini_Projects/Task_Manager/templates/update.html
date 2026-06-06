@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Update Task</title>
+
+    <style>
+      body {
+        background-color: #e5e7eb;
+        font-family: Arial, sans-serif;
+        padding: 40px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 42px;
+        color: #1f2937;
+        margin-bottom: 35px;
+      }
+
+      form {
+        background-color: white;
+        width: 500px;
+        margin: auto;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      label {
+        font-size: 18px;
+        font-weight: bold;
+        color: #374151;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-size: 16px;
+      }
+
+      input[type="radio"] {
+        margin-top: 15px;
+        margin-right: 8px;
+      }
+
+      button {
+        padding: 12px 22px;
+        border: none;
+        border-radius: 7px;
+        background-color: #1677ee;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+        margin-right: 10px;
+      }
+
+      button:hover {
+        background-color: #0f5ec4;
+      }
+
+      center {
+        margin-top: 25px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Update Task</h1>
+
+    <form action="/update" method="POST">
+      <label>Current Task Name :</label>
+      <input type="text" name="oldtaskname" />
+
+      <label>New Task Name :</label>
+      <input type="text" name="newtaskname" />
+
+      <label>New Task Detail :</label>
+      <input type="text" name="newtaskdetail" />
+
+      <label>New Task Status :</label><br />
+
+      <input type="radio" name="newtaskstatus" value="active" id="active" />
+      <label for="active">Active</label><br />
+
+      <input type="radio" name="newtaskstatus" value="pending" id="pending" />
+      <label for="pending">Pending</label><br />
+
+      <input
+        type="radio"
+        name="newtaskstatus"
+        value="completed"
+        id="completed"
+      />
+      <label for="completed">Completed</label><br />
+
+      <button type="submit">Update Task</button>
+    </form>
+
+    <center>
+      <a href="/add">
+        <button>Add</button>
+      </a>
+
+      <a href="/view">
+        <button>View</button>
+      </a>
+
+      <a href="/">
+        <button>Home</button>
+      </a>
+    </center>
+  </body>
+</html>

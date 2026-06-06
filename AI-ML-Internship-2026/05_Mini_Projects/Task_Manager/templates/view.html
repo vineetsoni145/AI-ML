@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>View Tasks</title>
+
+    <style>
+      body {
+        background-color: #e5e7eb;
+        font-family: Arial, sans-serif;
+        padding: 40px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 42px;
+        color: #1f2937;
+      }
+
+      article {
+        background-color: white;
+        width: 600px;
+        margin: auto;
+        margin-top: 25px;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      h3 {
+        color: #111827;
+      }
+
+      p {
+        color: #374151;
+        font-size: 17px;
+      }
+
+      button {
+        padding: 12px 22px;
+        margin-top: 25px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 7px;
+        background-color: #1677ee;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0f5ec4;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>All Tasks</h1>
+
+    {% for task in tasks %}
+
+    <article>
+      <h3>Task Name : {{ task.name }}</h3>
+
+      <p>Task Detail : {{ task.detail }}</p>
+
+      <p>Status : {{ task.status }}</p>
+    </article>
+
+    {% endfor %}
+
+    <center>
+      <a href="/">
+        <button>Home</button>
+      </a>
+
+      <a href="/delete">
+        <button>Delete Task</button>
+      </a>
+    </center>
+  </body>
+</html>
