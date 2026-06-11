@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Lung Cancer Risk Assessment</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #eef5fb;
+        margin: 0;
+      }
+
+      h1 {
+        background-color: #0d47a1;
+        color: white;
+        padding: 20px;
+        margin: 0;
+        text-align: center;
+      }
+
+      h3 {
+        text-align: center;
+        color: #0d47a1;
+      }
+
+      form {
+        background: white;
+        width: 700px;
+        margin: 20px auto;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px lightgray;
+      }
+
+      fieldset {
+        margin-bottom: 20px;
+        border: 2px solid #0d47a1;
+        padding: 15px;
+      }
+
+      legend {
+        color: #0d47a1;
+        font-weight: bold;
+      }
+
+      input[type="number"] {
+        width: 95%;
+        padding: 8px;
+        margin-top: 5px;
+      }
+
+      label {
+        display: inline-block;
+        width: 250px;
+        margin-bottom: 10px;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #0d47a1;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #08306b;
+      }
+
+      .result {
+        background: white;
+        width: 700px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 0px 10px lightgray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Cancer Care Center</h1>
+    <h3>Lung Cancer Risk Assessment Form</h3>
+
+    <form action="/submit" method="POST">
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        Age:<br />
+        <input type="number" name="age" required />
+        <br /><br />
+
+        Gender:
+        <input type="radio" name="gender" value="1" required /> Male
+        <input type="radio" name="gender" value="2" /> Female
+      </fieldset>
+
+      <fieldset>
+        <legend>Medical Information</legend>
+
+        <label>Air Pollution</label>
+        <input type="radio" name="air_pollution" value="1" required /> No
+        <input type="radio" name="air_pollution" value="8" /> Yes <br /><br />
+
+        <label>Alcohol Use</label>
+        <input type="radio" name="alcohol_use" value="1" required /> No
+        <input type="radio" name="alcohol_use" value="8" /> Yes <br /><br />
+
+        <label>Dust Allergy</label>
+        <input type="radio" name="dust_allergy" value="1" required /> No
+        <input type="radio" name="dust_allergy" value="8" /> Yes <br /><br />
+
+        <label>Occupational Hazards</label>
+        <input type="radio" name="occupational_hazards" value="1" required /> No
+        <input type="radio" name="occupational_hazards" value="8" /> Yes
+        <br /><br />
+
+        <label>Genetic Risk</label>
+        <input type="radio" name="genetic_risk" value="1" required /> No
+        <input type="radio" name="genetic_risk" value="8" /> Yes <br /><br />
+
+        <label>Chronic Lung Disease</label>
+        <input type="radio" name="chronic_lung_disease" value="1" required /> No
+        <input type="radio" name="chronic_lung_disease" value="8" /> Yes
+        <br /><br />
+
+        <label>Balanced Diet</label>
+        <input type="radio" name="balanced_diet" value="1" required /> No
+        <input type="radio" name="balanced_diet" value="8" /> Yes <br /><br />
+
+        <label>Obesity</label>
+        <input type="radio" name="obesity" value="1" required /> No
+        <input type="radio" name="obesity" value="8" /> Yes <br /><br />
+
+        <label>Smoking</label>
+        <input type="radio" name="smoking" value="1" required /> No
+        <input type="radio" name="smoking" value="8" /> Yes <br /><br />
+
+        <label>Passive Smoker</label>
+        <input type="radio" name="passive_smoker" value="1" required /> No
+        <input type="radio" name="passive_smoker" value="8" /> Yes <br /><br />
+
+        <label>Chest Pain</label>
+        <input type="radio" name="chest_pain" value="1" required /> No
+        <input type="radio" name="chest_pain" value="8" /> Yes <br /><br />
+
+        <label>Coughing of Blood</label>
+        <input type="radio" name="coughing_of_blood" value="1" required /> No
+        <input type="radio" name="coughing_of_blood" value="8" /> Yes
+        <br /><br />
+
+        <label>Fatigue</label>
+        <input type="radio" name="fatigue" value="1" required /> No
+        <input type="radio" name="fatigue" value="8" /> Yes <br /><br />
+
+        <label>Weight Loss</label>
+        <input type="radio" name="weight_loss" value="1" required /> No
+        <input type="radio" name="weight_loss" value="8" /> Yes <br /><br />
+
+        <label>Shortness of Breath</label>
+        <input type="radio" name="shortness_of_breath" value="1" required /> No
+        <input type="radio" name="shortness_of_breath" value="8" /> Yes
+        <br /><br />
+
+        <label>Wheezing</label>
+        <input type="radio" name="wheezing" value="1" required /> No
+        <input type="radio" name="wheezing" value="8" /> Yes <br /><br />
+
+        <label>Swallowing Difficulty</label>
+        <input type="radio" name="swallowing_difficulty" value="1" required />No
+        <input type="radio" name="swallowing_difficulty" value="8" /> Yes
+        <br /><br />
+
+        <label>Clubbing of Finger Nails</label>
+        <input
+          type="radio"
+          name="clubbing_of_finger_nails"
+          value="1"
+          required
+        />No
+        <input type="radio" name="clubbing_of_finger_nails" value="8" /> Yes
+        <br /><br />
+
+        <label>Frequent Cold</label>
+        <input type="radio" name="frequent_cold" value="1" required /> No
+        <input type="radio" name="frequent_cold" value="8" /> Yes <br /><br />
+
+        <label>Dry Cough</label>
+        <input type="radio" name="dry_cough" value="1" required /> No
+        <input type="radio" name="dry_cough" value="8" /> Yes <br /><br />
+
+        <label>Snoring</label>
+        <input type="radio" name="snoring" value="1" required /> No
+        <input type="radio" name="snoring" value="8" /> Yes <br /><br />
+      </fieldset>
+
+      <input type="submit" value="Analyze Patient" />
+    </form>
+
+    {% if risk %}
+    <section class="result">
+      <h2>{{ risk }}</h2>
+      <p>{{ advice }}</p>
+    </section>
+    {% endif %}
+  </body>
+</html>
