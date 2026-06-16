@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NLP Text Processing</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color:#f2f2f2;
+            text-align:center;
+            margin-top:50px;
+        }
+
+        textarea{
+            width:400px;
+            height:100px;
+            padding:10px;
+            font-size:16px;
+        }
+
+        button{
+            padding:10px 20px;
+            font-size:16px;
+            background-color:blue;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background-color:darkblue;
+        }
+
+        p{
+            width:70%;
+            margin:15px auto;
+            text-align:left;
+            background:white;
+            padding:10px;
+            border:1px solid #ccc;
+        }
+    </style>
+
+</head>
+<body>
+
+<h2>Natural Language Processing</h2>
+
+<form method="POST">
+<textarea name="sentence" placeholder="Enter a sentence"></textarea><br><br>
+<button type="submit">Submit</button>
+</form>
+<br>
+<p><b>Tokenized Words:</b> {{ tokens }}</p>
+<p><b>Stopwords Removed:</b> {{ filtered }}</p>
+<p><b>Stemmed Output:</b> {{ stemmed }}</p>
+<p><b>Lemmatized Output:</b> {{ lemmatized }}</p>
+</body>
+</html>
