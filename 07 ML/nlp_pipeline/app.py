@@ -1,11 +1,7 @@
 from flask import Flask, render_template, request
 import nltk
-nltk.download('punkt')
-nltk.download('punkt_tab')
 from nltk.tokenize import word_tokenize
-nltk.download("stopwords")
 from nltk.corpus import stopwords
-nltk.download("wordnet")
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 
 app = Flask(__name__)
@@ -42,14 +38,15 @@ def home():
         for word in filtered_words:
             lemmatized_words.append(lemmatizer.lemmatize(word))
         lemmatized = lemmatized_words
+        return render_template("index.html",tokens=tokens,filtered=filtered,stemmed=stemmed,lemmatized=lemmatized)
+
 
     else:
         tokens = "Will be displayed soon"
         filtered = "Will be displayed soon"
         stemmed = "Will be displayed soon"
         lemmatized = "Will be displayed soon"
-
-    return render_template("index.html",tokens=tokens,filtered=filtered,stemmed=stemmed,lemmatized=lemmatized)
+        return render_template("index.html",tokens=tokens,filtered=filtered,stemmed=stemmed,lemmatized=lemmatized)
 
 if __name__ == "__main__":
     app.run(debug=True)
